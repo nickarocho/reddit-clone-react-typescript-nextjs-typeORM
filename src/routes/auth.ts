@@ -8,7 +8,7 @@ import User from "../entities/User";
 import auth from "../middleware/auth";
 
 const register = async (req: Request, res: Response) => {
-  const {email, username, password} = req.body;
+  const { email, username, password } = req.body;
 
   try {
     // Validate data
@@ -62,7 +62,7 @@ const login = async (req: Request, res: Response) => {
       return res.status(401).json({ password: 'Password is incorrect' });
     }
 
-    const token = jwt.sign({ username }, process.env.JWT_SECRET );
+    const token = jwt.sign({ username }, process.env.JWT_SECRET! );
     // set is used to set headers when you send back a response
     res.set(
       'Set-Cookie',
