@@ -54,7 +54,7 @@ export default function Register() {
                 onChange={e => setAgreement(e.target.checked)}
               />
               <label htmlFor="agreement" className="text-xs cursor-pointer">
-                I agree to get emails about cool stuff on Reddit.
+                I agree to get emails about cool stuff on Readit.
               </label>
               <small className="block font-medium text-red-600">{errors.agreement}</small>
             </div>
@@ -87,7 +87,7 @@ export default function Register() {
             </button>
           </form>
           <small>
-            Already a Redditor?
+            Already a Readitor?
             <Link href="/login">
               <a className="ml-1 text-blue-500 uppercase">
                 Log In

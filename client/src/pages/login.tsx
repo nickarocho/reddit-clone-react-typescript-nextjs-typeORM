@@ -60,7 +60,7 @@ export default function Register() {
             </button>
           </form>
           <small>
-            New to Reddit?
+            New to Readit?
             <Link href="/register">
               <a className="ml-1 text-blue-500 uppercase">
                 Sign Up
