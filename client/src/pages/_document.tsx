@@ -15,8 +15,9 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600&display=swap"
             rel="stylesheet"
           />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossOrigin="anonymous" />
         </Head>
-        <body className="font-body">
+        <body className="font-body" style={{ backgroundColor: '#DAE0E6' }}>
           <Main />
           <NextScript />
         </body>
