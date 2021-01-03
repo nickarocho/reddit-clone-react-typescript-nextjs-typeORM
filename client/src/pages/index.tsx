@@ -6,20 +6,18 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
 import { Post } from '../types'
-import { GetServerSideProps } from 'next';
 
 dayjs.extend(relativeTime);
 
-export default function Home({ posts }) {
+export default function Home() {
 
-  // const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
-  // useEffect(() => {
-  //   Axios.get('/posts')
-  //     // .then(res => setPosts(res.data))
-  //     .then(res => setPosts(res.data))
-  //     .catch(err => console.log(err))
-  // }, []) // [] empty dependency array so this only executes ONCE
+  useEffect(() => {
+    Axios.get('/posts')
+      .then(res => setPosts(res.data))
+      .catch(err => console.log(err))
+  }, []) // [] empty dependency array so this only executes ONCE
 
   return (
     <div className="pt-12">
@@ -96,13 +94,14 @@ export default function Home({ posts }) {
   )
 }
 
+// TODO: Keeping for reference
 // SSR - fetches data from the server side via Next.js
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  try {
-    const res = await Axios.get('/posts')
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   try {
+//     const res = await Axios.get('/posts')
 
-    return { props: { posts: res.data } }
-  } catch (err) {
-    return { props: { error: 'Something went wrong' }}
-  }
-}
+//     return { props: { posts: res.data } }
+//   } catch (err) {
+//     return { props: { error: 'Something went wrong' }}
+//   }
+// }
